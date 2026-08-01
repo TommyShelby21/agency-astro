@@ -1,0 +1,59 @@
+---
+const services = [
+	{
+		n: '// 01',
+		title: 'Prezentační web',
+		desc: 'Vizitka pro živnostníky a menší firmy. Do 5 podstránek, responzivní design, kontaktní formulář, optimalizace pro Google.',
+		price: '8 000 – 20 000 Kč',
+		note: 'dodání do 5 pracovních dní',
+	},
+	{
+		n: '// 02',
+		title: 'Menší eshop',
+		desc: 'Eshop na Shopify nebo Shoptet, napojený na platební bránu a dopravu (Zásilkovna, GLS). Do 50 produktů.',
+		price: '20 000 – 45 000 Kč',
+		note: 'dodání do 3 týdnů',
+	},
+	{
+		n: '// 03',
+		title: 'Eshop na míru',
+		desc: 'Rozsáhlejší eshop s vlastní logikou — sklad, věrnostní program, propojení na fakturační systém.',
+		price: '45 000+ Kč',
+		note: 'rozsah dle konzultace',
+	},
+];
+---
+
+<section id="services">
+	<div class="section-head">
+		<div>
+			<div class="section-label"><span class="n">03</span> Služby</div>
+			<h2>Tři balíčky, jasné ceny</h2>
+		</div>
+		<div class="desc">Fixní cena za daný rozsah — víte předem, kolik a za co platíte.</div>
+	</div>
+	<div class="services">
+		{services.map((s) => (
+			<div class="service-card">
+				<div class="n">{s.n}</div>
+				<h3>{s.title}</h3>
+				<p>{s.desc}</p>
+				<div class="price">{s.price}<span>{s.note}</span></div>
+			</div>
+		))}
+	</div>
+</section>
+
+<style>
+	.services{ display:grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+	.service-card{
+		border:1px solid var(--line); border-radius:4px; padding: 34px 28px;
+		background: var(--card); display:flex; flex-direction:column; height:100%;
+	}
+	.service-card .n{ font-family:'JetBrains Mono',monospace; color: var(--accent); font-size:0.85rem; margin-bottom:20px; }
+	.service-card h3{ font-family:'Space Grotesk',sans-serif; font-size:1.3rem; font-weight:600; margin-bottom:12px; }
+	.service-card p{ color:var(--slate); font-size:0.92rem; line-height:1.6; margin-bottom:22px; flex:1; }
+	.service-card .price{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.15rem; border-top:1px solid var(--line); padding-top:18px; }
+	.service-card .price span{ font-family:'Inter',sans-serif; font-weight:400; font-size:0.78rem; color:var(--slate); display:block; margin-top:4px; }
+	@media (max-width: 900px){ .services{ grid-template-columns:1fr; } }
+</style>

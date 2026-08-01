@@ -1,0 +1,24 @@
+---
+interface Props {
+	email?: string;
+	phone?: string;
+}
+const { email = 'tomas@example.cz', phone = '+420000000000' } = Astro.props;
+---
+
+<section id="contact" class="contact-sec">
+	<div class="section-label" style="justify-content:center;"><span class="n">05</span> Kontakt</div>
+	<h2>Máte web, který vás<br />brzdí místo aby pomáhal?</h2>
+	<p>Napište mi, co potřebujete — do 24 hodin se ozvu s návrhem řešení a orientační cenou.</p>
+	<div class="contact-links">
+		<a class="btn" href={`mailto:${email}`}>Napsat email →</a>
+		<a class="btn-outline" href={`tel:${phone}`}>Zavolat</a>
+	</div>
+</section>
+
+<style>
+	.contact-sec{ text-align:center; padding: 130px 6vw; border-bottom:none; }
+	.contact-sec h2{ font-family:'Space Grotesk',sans-serif; font-size: clamp(2.2rem,4.5vw,3.6rem); font-weight:600; letter-spacing:-0.02em; max-width:700px; margin: 0 auto 26px; }
+	.contact-sec p{ color: var(--slate); max-width:460px; margin: 0 auto 40px; font-size:1.02rem; }
+	.contact-links{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; }
+</style>

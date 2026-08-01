@@ -1,0 +1,32 @@
+---
+const stats = [
+	{ num: '3+', label: 'roky praxe' },
+	{ num: '5', label: 'dní na web' },
+	{ num: '100%', label: 'na míru' },
+	{ num: 'FP VUT', label: 'manažerská informatika' },
+];
+---
+
+<div class="stats">
+	{stats.map((s) => (
+		<div class="stat">
+			<div class="num">{s.num}</div>
+			<div class="label">{s.label}</div>
+		</div>
+	))}
+</div>
+
+<style>
+	.stats{
+		display:grid; grid-template-columns: repeat(4,1fr);
+		border-bottom: 1px solid var(--line);
+	}
+	.stat{ padding: 30px 6vw; border-right: 1px solid var(--line); }
+	.stat:last-child{ border-right:none; }
+	.stat .num{ font-family:'Space Grotesk',sans-serif; font-size:2.1rem; font-weight:700; color: var(--accent); }
+	.stat .label{ font-family:'JetBrains Mono',monospace; font-size:0.72rem; color: var(--slate); margin-top:6px; text-transform:uppercase; letter-spacing:0.03em;}
+	@media (max-width: 800px){
+		.stats{ grid-template-columns: repeat(2,1fr);}
+		.stat{ border-bottom:1px solid var(--line);}
+	}
+</style>

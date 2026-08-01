@@ -1,0 +1,35 @@
+<section class="hero" style="border-top:none;">
+	<div>
+		<div class="eyebrow">Volný pro nové projekty · Brno, ČR</div>
+		<h1>Weby a eshopy,<br /><span class="thin">které fungují —</span><br />ne jen vypadají.</h1>
+	</div>
+	<div class="hero-side">
+		<p>Fullstack vývojář se 3 lety zkušeností. Stavím rychlé, přehledné webové stránky a eshopy pro živnostníky a menší firmy v ČR i zahraničí.</p>
+		<a class="btn" href="#contact">Nezávazná konzultace →</a>
+	</div>
+</section>
+
+<style>
+	.hero{
+		padding: 100px 6vw 80px;
+		display:grid; grid-template-columns: 1.3fr 0.7fr; gap: 50px; align-items:end;
+		border-bottom: 1px solid var(--line);
+	}
+	.eyebrow{
+		font-family:'JetBrains Mono',monospace; font-size:0.78rem; color: var(--accent);
+		letter-spacing: 0.04em; margin-bottom: 22px; display:flex; align-items:center; gap:10px;
+	}
+	.eyebrow::before{ content:""; width:8px; height:8px; background:var(--accent); border-radius:50%; display:inline-block; }
+	.hero h1{
+		font-family:'Space Grotesk',sans-serif;
+		font-size: clamp(2.6rem, 5.4vw, 4.6rem); font-weight:600; line-height: 1.02; letter-spacing:-0.02em;
+	}
+	.hero h1 .thin{ color: var(--slate); font-weight:400; }
+	.hero-side{ border-left: 1px solid var(--line); padding-left: 30px; }
+	.hero-side p{ color: var(--slate); font-size: 0.98rem; line-height:1.6; margin-bottom: 24px; }
+
+	@media (max-width: 800px){
+		.hero{ grid-template-columns: 1fr; }
+		.hero-side{ border-left:none; padding-left:0; }
+	}
+</style>

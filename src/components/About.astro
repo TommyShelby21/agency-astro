@@ -1,0 +1,31 @@
+---
+const tags = ['Python / Django', 'Vue.js', 'Astro', 'PostgreSQL', 'Shopify / Shoptet'];
+---
+
+<section id="about">
+	<div class="section-label"><span class="n">01</span> O mně</div>
+	<div class="about-grid">
+		<div>
+			<p>Poslední tři roky pracuju jako fullstack vývojář v pražské firmě Digital Wish, kde stavím weby a interní systémy v Pythonu, Django a Vue.js. Souběžně studuju manažerskou informatiku na VUT v Brně.</p>
+			<p>Teď tuhle zkušenost nabízím i menším firmám a živnostníkům přímo — bez agenturní byrokracie, s jasnou cenou a komunikací, které rozumíte.</p>
+			<div class="tags">
+				{tags.map((t) => <div class="tag">{t}</div>)}
+			</div>
+		</div>
+		<div>
+			<p>Cílem není postavit "hezký web" — je to nástroj, který má přivést zákazníky. Proto se u každého projektu ptám nejdřív na to, jak lidi váš web najdou a co je má přimět zavolat nebo objednat, teprve pak řešíme design.</p>
+			<p>Pracuju rychle a transparentně: fixní cena předem, jasný harmonogram, žádné skryté náklady navíc.</p>
+		</div>
+	</div>
+</section>
+
+<style>
+	.about-grid{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; }
+	.about-grid p{ color:#33383d; font-size:1.05rem; line-height:1.75; margin-bottom:18px; }
+	.tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top: 30px; }
+	.tag{
+		font-family:'JetBrains Mono',monospace; font-size:0.78rem;
+		border:1px solid var(--line); padding:7px 14px; border-radius:3px; color:#33383d;
+	}
+	@media (max-width: 800px){ .about-grid{ grid-template-columns:1fr; } }
+</style>
