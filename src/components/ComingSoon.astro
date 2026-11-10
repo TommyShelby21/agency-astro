@@ -1,0 +1,55 @@
+---
+const email = 'tomasosicka32@gmail.com';
+---
+
+<main class="soon">
+	<div class="inner">
+		<div class="section-label mono">// web se připravuje</div>
+		<h1 class="display">Připravujeme<span class="dot">.</span></h1>
+		<p class="contact">
+			Mezitím mi můžete napsat na
+			<a href={`mailto:${email}`}>{email}</a>
+		</p>
+	</div>
+</main>
+
+<style>
+	.soon {
+		min-height: 100vh;
+		min-height: 100dvh;
+		display: flex;
+		align-items: center;
+		padding: 40px 6vw;
+	}
+	.inner {
+		max-width: 720px;
+	}
+	h1 {
+		font-size: clamp(2.8rem, 9vw, 6rem);
+		font-weight: 700;
+		letter-spacing: -0.03em;
+		line-height: 1;
+		margin-bottom: 28px;
+	}
+	.dot {
+		color: var(--accent);
+	}
+	.lead {
+		font-size: clamp(1.05rem, 2vw, 1.25rem);
+		line-height: 1.55;
+		color: var(--slate);
+		margin-bottom: 18px;
+	}
+	.contact {
+		font-size: 0.95rem;
+		color: var(--slate);
+	}
+	.contact a {
+		color: var(--ink);
+		border-bottom: 1px solid var(--accent);
+		font-weight: 500;
+	}
+	.contact a:hover {
+		color: var(--accent);
+	}
+</style>

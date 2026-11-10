@@ -9,16 +9,29 @@ import Services from '../components/Services.astro';
 import Process from '../components/Process.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+import ComingSoon from '../components/ComingSoon.astro';
+
+// true = web je skrytý a zobrazuje se jen stránka „Připravujeme“
+// false = zobrazí se celý web
+const COMING_SOON = true;
 ---
 
-<Layout>
-	<Header />
-	<Hero />
-	<Stats />
-	<About />
-	<Work />
-	<Services />
-	<Process />
-	<Contact />
-	<Footer />
-</Layout>
+{
+	COMING_SOON ? (
+		<Layout title="Připravujeme — Tomáš" noindex>
+			<ComingSoon />
+		</Layout>
+	) : (
+		<Layout>
+			<Header />
+			<Hero />
+			<Stats />
+			<About />
+			<Work />
+			<Services />
+			<Process />
+			<Contact />
+			<Footer />
+		</Layout>
+	)
+}
